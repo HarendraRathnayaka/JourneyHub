@@ -51,7 +51,7 @@ router.route('/update/:id').put(async (req, res) => {
 
   let Id = req.params.id;
 
-  const { firstName, lastName, email, age, phoneNo, gender, language } = req.body; 
+  const { firstName, lastName, email, age, phoneNo, gender, language } = req.body ; 
   const updateGuide = {
     firstName,
     lastName,
