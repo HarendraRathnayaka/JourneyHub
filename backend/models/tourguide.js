@@ -32,6 +32,16 @@ const guideSchema = new Schema({
         required: true
     },
 
+    gender: {
+        type: String,
+        required: true
+    },
+
+    language: {
+        type: String,
+        required: true
+    },
+
 })
 
 autoIncrement.initialize(mongoose.connection);
