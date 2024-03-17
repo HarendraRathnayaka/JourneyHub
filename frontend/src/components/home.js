@@ -1,18 +1,14 @@
 import React from 'react'
-import header from './header'
-import footer from './footer'
+import Header from './header'
+import Footer from './footer'
 
 function Home() {
   return (
-    <>
-        <header/>
-
-            <div>
-
-            </div>
-
-        <footer/>
-    </>
+    <div>
+        <Header/>
+          
+        <Footer/>
+    </div>
   )
 }
 

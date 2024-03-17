@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 
 const guideSchema = new Schema({
 
-    guideNo: {
+    guideId: {
         type: Number,
         required: true,
         unique: true,
@@ -37,7 +37,7 @@ const guideSchema = new Schema({
 autoIncrement.initialize(mongoose.connection);
 guideSchema.plugin(autoIncrement.plugin, {
     model: 'guides',
-    field: 'guideNo',
+    field: 'guideId',
     startAt: 1,
     incrementBy: 1
 });

@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 
 import Home from './components/home';
+import LandingPage from './components/landingpage';
 
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           
-          <Route path="/home" element={<Home/>}/>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/home" element={<LandingPage/>}/>
 
         </Routes>
       </BrowserRouter>

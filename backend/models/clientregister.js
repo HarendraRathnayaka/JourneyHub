@@ -3,28 +3,32 @@ const autoIncrement = require('mongoose-auto-increment');
 
 const Schema = mongoose.Schema;
 
-const paymentSchema = new Schema({
+const clientSchema = new Schema({
 
     clientId: {
-        type: Number,
-        required: true
-    },
-    paymentId: {
         type: Number,
         required: true,
         unique: true,
         default: 0
     },
-    totalPayment:{
-        type: Number,
+    firstName: {
+        type: String,
         required: true
     },
-    discountedPayment:{
-        type: Number,
+    lastName:{
+        type: String,
         required: true
     },
     email: {
         type: String,
+        required: true
+    },
+    address: {
+        type: String,
+        required: true
+    },
+    phoneNo: {
+        type: Number,
         required: true
     },
 
@@ -32,13 +36,13 @@ const paymentSchema = new Schema({
 
 autoIncrement.initialize(mongoose.connection);
 guideSchema.plugin(autoIncrement.plugin, {
-    model: 'payments',
-    field: 'paymentId',
+    model: 'clients',
+    field: 'clientId',
     startAt: 1,
     incrementBy: 1
 });
 
 
-const payment = mongoose.model("payments", paymentSchema);
+const client = mongoose.model("clients", clientSchema);
 
-module.exports = payment;
+module.exports = client;

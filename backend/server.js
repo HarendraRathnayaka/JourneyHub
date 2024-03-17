@@ -3,9 +3,9 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const app = express();
-require('dotenv').config();
 
+const app = express();
+dotenv.config();
 
 app.use(
   cors({
@@ -15,15 +15,12 @@ app.use(
   })
 );
 
-
 // Database Connection
 const URL = process.env.MONGODB_URL;
 
 mongoose.connect(URL, {
-  //useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  //useFindAndModify: false
 });
 
 const connection = mongoose.connection;
@@ -32,24 +29,12 @@ connection.once('open', () => {
 });
 
 // Middleware
-app.use(cors());
 app.use(express.json());
 
-
-// https://localhost/guide/
+// Routes
 app.use('/guide', require('./routes/tourguide.js'));
 
-
-
-
-
-
-
-
-
-
-
-
+app.use('/payment', require('./routes/tourpayment.js'));
 
 
 

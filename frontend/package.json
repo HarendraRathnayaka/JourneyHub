@@ -5,7 +5,10 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/style": "^0.8.0",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.13",
     "@mui/material": "^5.15.12",
+    "@mui/styled-engine": "^5.15.11",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -13,6 +16,7 @@
     "firebase": "^10.8.1",
     "jspdf": "^2.5.1",
     "jspdf-autotable": "^3.8.2",
+    "mdb-react-ui-kit": "^7.2.0",
     "mui": "^0.0.1",
     "nodemon": "^3.1.0",
     "plotly.js": "^2.29.1",
@@ -21,13 +25,13 @@
     "react-router-dom": "^6.22.2",
     "react-scripts": "^5.0.1",
     "react-to-print": "^2.15.1",
+    "tw-elements-react": "^1.0.0-alpha2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "nodemon server.js"
   },
   "eslintConfig": {
     "extends": [
