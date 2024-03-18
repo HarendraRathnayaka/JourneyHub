@@ -19,18 +19,20 @@ jobs:
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Actions"
       
-      - name: Add remote for upstream repository
+      - name: Add remote for upstream repository # Replace with your original repository URL
         run: |
-          git remote add upstream https://github.com/HarendraRathnayaka/JourneyHub.git  # Replace with your original repository URL
+          git remote add upstream https://github.com/HarendraRathnayaka/JourneyHub.git  
       
       - name: Fetch upstream changes
         run: |
           git fetch upstream
       
-      - name: Merge upstream changes into fork
+      - name: Merge upstream changes into fork  # Change `main` to your main branch name
         run: |
-          git merge upstream/main  # Change `main` to your main branch name
+          git merge upstream/main  
       
       - name: Push changes to fork
+        env:
+          PAT: ${{ secrets.GIT_PAT }}  # Use the secret named GIT_PAT
         run: |
           git push origin main  # Change `main` to your main branch name
