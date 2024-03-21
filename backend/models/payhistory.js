@@ -2,19 +2,24 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const paySchema = new Schema({
+const paymentSchema = new Schema({
 
     clientId: {
         type: Number,
         required: true
     },
     totalYet: {
-        type: String,
+        type: Number,
         required: true
     },
+    discount: {
+        type: Number,
+        required: true,
+        default: 0
+    }
      
 })
 
-const pay = mongoose.model("pays", paySchema);
+const payment = mongoose.model("payments", paymentSchema);
 
-module.exports = pay;
+module.exports = payment;

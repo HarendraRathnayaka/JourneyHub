@@ -10,6 +10,7 @@ import {
 
 import Home from './components/home';
 import LandingPage from './components/landingpage';
+import PayForm from './components/tourpayment/paymentform';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           
           <Route path="/" element={<Home/>}/>
           <Route path="/home" element={<LandingPage/>}/>
+          <Route path="/payment/:clientId" element={<PayForm/>}/>
 
         </Routes>
       </BrowserRouter>

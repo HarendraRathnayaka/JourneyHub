@@ -4,7 +4,6 @@ const autoIncrement = require('mongoose-auto-increment');
 const Schema = mongoose.Schema;
 
 const clientSchema = new Schema({
-
     clientId: {
         type: Number,
         required: true,
@@ -31,11 +30,13 @@ const clientSchema = new Schema({
         type: Number,
         required: true
     },
-
-})
+    qrCode: {
+        type: String // Store the QR code string here
+    }
+});
 
 autoIncrement.initialize(mongoose.connection);
-guideSchema.plugin(autoIncrement.plugin, {
+clientSchema.plugin(autoIncrement.plugin, {
     model: 'clients',
     field: 'clientId',
     startAt: 1,
