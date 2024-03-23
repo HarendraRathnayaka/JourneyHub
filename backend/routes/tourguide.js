@@ -9,6 +9,7 @@ router.route('/add').post((req, res) => {
   const lastName = req.body.lastName;
   const email = req.body.email;
   const age = req.body.age;
+  const gender = req.body.gender;
   const phoneNo = req.body.phoneNo;
 
   const newGuide = new guide({
@@ -17,6 +18,7 @@ router.route('/add').post((req, res) => {
     email,
     age,
     phoneNo,
+    gender
   });
 
   newGuide
@@ -45,13 +47,14 @@ router.route('/').get((req, res) => {
 router.route('/update/:id').put(async (req, res) => {
   let Id = req.params.id;
 
-  const { firstName, lastName, email, age, phoneNo } = req.body;
+  const { firstName, lastName, email, age, phoneNo, gender } = req.body;
   const updateGuide = {
     firstName,
     lastName,
     email,
     age,
-    phoneNo,
+    gender,
+    phoneNo
   };
   const Update = await guide
     .findByIdAndUpdate(Id, updateGuide)

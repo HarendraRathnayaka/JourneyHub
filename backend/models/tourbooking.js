@@ -15,9 +15,18 @@ const bookingSchema = new Schema({
     unique: true,
     default: 0,
   },
-  tour: {
-    type: String,
+  tourId: {
+    type: Number,
     required: true,
+  },
+  guideId: {
+    type: Number,
+    required: true,
+  },
+  bookedDate: {
+    type: Date,
+    required: true,
+    default: Date.now
   },
   startDate: {
     type: Date,
@@ -30,13 +39,17 @@ const bookingSchema = new Schema({
   noOfPeople: {
     type: Number,
     required: true,
+  },
+  status: {
+    type: String,
+    required: true,
+    default: "pending"
   }
-
 
 });
 
 autoIncrement.initialize(mongoose.connection);
-guideSchema.plugin(autoIncrement.plugin, {
+bookingSchema.plugin(autoIncrement.plugin, {
   model: 'bookings',
   field: 'bookingId',
   startAt: 1,
