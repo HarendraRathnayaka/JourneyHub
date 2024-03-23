@@ -24,4 +24,21 @@ router.route('/add').post((req, res) => {
 
 });
 
+router.route('/get/:tourId').get(async (req, res) => {
+  const tourId = req.params.tourId;
+
+  try {
+    const foundTour = await tour.findOne({ tourId: tourId });
+    if (foundTour) {
+      res.json(foundTour);
+    } else {
+      res.status(404).send('Tour not found');
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(400).send(`Error fetching tour: ${error.message}`);
+  }
+
+});
+
 module.exports = router;

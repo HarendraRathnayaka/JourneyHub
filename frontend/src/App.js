@@ -21,7 +21,7 @@ function App() {
           
           <Route path="/" element={<Home/>}/>
           <Route path="/home" element={<LandingPage/>}/>
-          <Route path="/payment/:clientId" element={<PayForm/>}/>
+          <Route path="/payment/:clientId/:bookingId" element={<PayForm/>}/>
 
         </Routes>
       </BrowserRouter>
