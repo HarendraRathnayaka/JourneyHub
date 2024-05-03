@@ -27,7 +27,7 @@ const clientSchema = new Schema({
         required: true
     },
     phoneNo: {
-        type: Number,
+        type: Number,// Store the phoneNo  here
         required: true
     },
     qrCode: {
