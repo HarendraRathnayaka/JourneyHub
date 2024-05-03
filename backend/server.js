@@ -1,41 +1,34 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const dotenv = require('dotenv');
+const express = require("express");
+require("dotenv").config();
+
+const mongoose = require("mongoose");
+const cors = require("cors"); // Import the cors middleware
+
+const bookingRoutes = require("./routes/bookingRoutes");
 
 const app = express();
-dotenv.config();
-
-app.use(
-  cors({
-    origin: 'http://localhost:3000',
-    methods: 'GET,POST,PUT,DELETE',
-    credentials: true,
-  })
-);
-
-// Database Connection
-const URL = process.env.MONGODB_URL;
-
-mongoose.connect(URL, {}); // Removed useNewUrlParser and useUnifiedTopology options
-
-const connection = mongoose.connection;
-connection.once('open', () => {
-  console.log('Mongodb database connected!');
-});
+const PORT = process.env.PORT || 8085;
 
 // Middleware
 app.use(express.json());
+app.use(cors()); // Use cors middleware to allow requests from all origins
 
 // Routes
-app.use('/guide', require('./routes/tourguide.js'));
-app.use('/payment', require('./routes/tourpayment.js'));
-app.use('/booking', require('./routes/tourbooking.js'));
-app.use('/client', require('./routes/client.js'));
-app.use('/tour', require('./routes/tour.js'));
+app.use("/bookings", bookingRoutes);
 
-const PORT = process.env.PORT || 8070;
-app.listen(PORT, () => {
-  console.log(`Server is up and running on port ${PORT}`);
-});
+// Connect to MongoDB
+mongoose
+  .connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("MongoDB Connected");
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error("MongoDB Connection Error:", err);
+    process.exit(1); // Exit the process if unable to connect to MongoDB
+  });
