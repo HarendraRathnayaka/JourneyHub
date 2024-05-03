@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+//data added
 const bookingSchema = new mongoose.Schema({
   bookedDate: {
     type: Date,
