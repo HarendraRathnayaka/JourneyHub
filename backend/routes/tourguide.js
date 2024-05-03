@@ -13,6 +13,7 @@ router.route('/add').post((req, res) => {
   const gender = req.body.gender;
   const phoneNo = req.body.phoneNo;
 
+  // Create a new guide object
   const newGuide = new guide({
     firstName,
     lastName,
