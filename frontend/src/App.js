@@ -1,32 +1,24 @@
-import './App.css';
-import React, { useEffect, useState } from 'react';
-import {
-  BrowserRouter,
-  Router,
-  Route,
-  Routes,
-  Navigate,
-} from 'react-router-dom';
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
-import Home from './components/home';
-import LandingPage from './components/landingpage';
-import PayForm from './components/tourpayment/paymentform';
-
+import Navbar from "./Components/NavBar";
+import CreateBooking from "./Components/CreateBooking";
+import BookingsList from "./Components/BookingList";
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
+    <BrowserRouter>
+      <ToastContainer />
+      <div>
+        <Navbar />
         <Routes>
-          
-          <Route path="/" element={<Home/>}/>
-          <Route path="/home" element={<LandingPage/>}/>
-          <Route path="/payment/:clientId/:bookingId" element={<PayForm/>}/>
-
+          <Route path="/bookinglist" element={<BookingsList />} />
+          <Route path="/create" element={<CreateBooking />} />
         </Routes>
-      </BrowserRouter>
-    </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
-export default App;
+export default App;

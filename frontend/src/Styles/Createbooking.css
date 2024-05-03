@@ -1,0 +1,207 @@
+.create-booking-container {
+  max-width: 600px;
+  margin-left: 28%;
+  margin-top: 180px;
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form {
+  display: grid;
+  gap: 15px;
+}
+
+.form-group {
+  display: grid;
+  gap: 5px;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-input-date,
+.form-input-number,
+.form-input-text,
+.form-input-phone,
+.form-input-email {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-input-date::-webkit-calendar-picker-indicator {
+  /* Style the calendar icon for date input */
+  filter: invert(50%);
+  cursor: pointer;
+}
+
+.form-input-number::-webkit-inner-spin-button,
+.form-input-number::-webkit-outer-spin-button {
+  /* Hide number input spin buttons */
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-input-text:focus,
+.form-input-number:focus,
+.form-input-phone:focus,
+.form-input-email:focus,
+.form-input-date:focus {
+  /* Add focus styles */
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.submit-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+.submit-button:active {
+  background-color: #3e8e41;
+}
+ /*footer */
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer-logo img {
+  width: 100px; /* Adjust as per your logo size */
+  height: auto;
+  margin-right: 20px;
+}
+
+.footer-links {
+  margin-right: 20px;
+}
+
+.footer-links a {
+  color: #333;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.social-icons a {
+  color: #333;
+  margin-right: 10px;
+}
+
+.footer-text {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666666;
+}
+
+.create-booking-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.booking-form {
+  margin-top: 20px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-input-text,
+.form-input-number,
+.form-input-phone,
+.form-input-email,
+.form-input-date {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-logo img {
+  max-width: 100px;
+  height: auto;
+}
+
+.footer-social-links a {
+  margin-left: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.footer-social-links a:hover {
+  color: #007bff;
+}
