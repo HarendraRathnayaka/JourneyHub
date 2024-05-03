@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const autoIncrement = require('mongoose-auto-increment');
 
 const Schema = mongoose.Schema;
-
+// add details
 const clientSchema = new Schema({
     clientId: {
         type: Number,
