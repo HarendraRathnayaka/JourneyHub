@@ -23,6 +23,7 @@ router.route('/add').post((req, res) => {
     gender
   });
 
+  // Save the new guide to the database
   newGuide
     .save()
     .then(() => {
