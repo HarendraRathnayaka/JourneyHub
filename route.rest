@@ -1,0 +1,20 @@
+GET http://localhost:5000/api/guide
+
+####
+
+POST http://localhost:5000/api/guide
+Content-Type: application/json
+
+{
+  "firstName": "Nimal",
+  "lastName": "Nimal",
+  "age": 25,
+  "phone": "0701111111",
+  "gender": "male",
+  "language": "English"
+}
+
+###
+
+DELETE http://localhost:5000/api/guide/65f0b12bc3edc45cfed32bba
+
