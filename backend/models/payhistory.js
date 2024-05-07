@@ -6,7 +6,7 @@ const paymentSchema = new Schema({
 
     clientId: {
         type: Number,
-        required: true
+        required: true  //clientId
     },
     totalYet: {
         type: Number,

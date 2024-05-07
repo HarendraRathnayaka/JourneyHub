@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const autoIncrement = require('mongoose-auto-increment');
 
 const Schema = mongoose.Schema;
-
+// add details
 const clientSchema = new Schema({
     clientId: {
         type: Number,
@@ -27,7 +27,7 @@ const clientSchema = new Schema({
         required: true
     },
     phoneNo: {
-        type: Number,
+        type: Number,// Store the phoneNo  here
         required: true
     },
     qrCode: {

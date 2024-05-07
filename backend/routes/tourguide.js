@@ -1,3 +1,4 @@
+// Import necessary modules
 const router = require('express').Router();
 let guide = require('../models/tourguide');
 
@@ -12,6 +13,7 @@ router.route('/add').post((req, res) => {
   const gender = req.body.gender;
   const phoneNo = req.body.phoneNo;
 
+  // Create a new guide object
   const newGuide = new guide({
     firstName,
     lastName,
@@ -21,6 +23,7 @@ router.route('/add').post((req, res) => {
     gender
   });
 
+  // Save the new guide to the database
   newGuide
     .save()
     .then(() => {
